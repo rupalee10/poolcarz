@@ -1,0 +1,38 @@
+<button type="button" class="btn btn-primary" (click)="showAll()">Show All Rides</button>
+<button type="button" class="btn btn-primary">Offer A Ride</button>
+
+
+<ng-template [ngIf]= "toggleAllRide" >
+    <div class="container">
+
+        <table class="table"> 
+                <thead>
+                        <tr>
+                            <td><button type="button" class="btn btn-primary" (click)="value='to'"  [disabled]="!toggleRide">To Infosys</button></td>
+                            <td><button type="button" class="btn btn-primary" (click)="value='from'" [disabled]="!toggleRide">From Infosys</button></td>
+                            <td><button type="button" class="btn btn-primary" (click)="value='others'" [disabled]="!toggleRide">Others</button></td>
+                        </tr>
+                </thead>
+            
+        </table>
+    
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Start Point</th>
+              <th>End Point </th>
+              <th>Seats Available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ride of rides |rideFilterPipe:value "#boookRide appMousehover>
+              <td>{{ride.startPoint}}</td>
+              <td>{{ride.EndPoint}}</td>
+              <td>{{ride.SeatsAvailable}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+</ng-template>
+ 
