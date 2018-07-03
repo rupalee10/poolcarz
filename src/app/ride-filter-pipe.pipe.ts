@@ -6,18 +6,25 @@ import { INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS } from '@angular/platform-b
 export class RideFilterPipePipe implements PipeTransform {
 
     transform(value: any, args?: any): any {
-    //console.log('the datais ',value);
+    console.log('the datais ',args);
     if(!value)return null;
     if(!args)return value;
 
   
     return value.filter(function(item){
-      console.log(item);
+      //console.log(item);
      if(item.EndPoint=='Infosys' && args=='to')
          return JSON.stringify(item);
     else if(item.startPoint=='Infosys'&& args=='from'){
       return JSON.stringify(item);
     }
+    else if(item.startPoint!='Infosys'&& item.EndPoint!='Infosys' && args=='others'){
+      return JSON.stringify(item);
+    }
+    else if(args=='all'){
+      return JSON.stringify(item);
+    }
+    
     });
   }
 }

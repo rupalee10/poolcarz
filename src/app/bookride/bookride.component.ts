@@ -32,13 +32,9 @@ export class BookrideComponent implements OnInit {
 
   showAll(){
     this.toggleAllRide=true;
-    //this.toggleRide=false;
-  }
+ }
   filterValues(event:any){
-    //alert(value);
     this.values += event.target.value ;
-    alert(this.values);
-
   }
 
 }
