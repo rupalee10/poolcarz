@@ -8,11 +8,16 @@ import {RouterModule,Routes} from '@angular/router';
 import { MousehoverDirective } from './mousehover.directive';
 import { RideFilterPipePipe } from './ride-filter-pipe.pipe';
 import {FormsModule}        from '@angular/forms';
+import { RideDetailsComponent } from './ride-details/ride-details.component';
+import { OfferRideComponent } from './offer-ride/offer-ride.component';
+import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
+
 
 
 const appRoutes:Routes=[
 
-  {path:'book-ride',component:BookrideComponent}
+  {path:'book-ride',component:BookrideComponent},
+  {path:'offer-ride',component:OfferRideComponent}
 ]
 
 @NgModule({
@@ -21,7 +26,9 @@ const appRoutes:Routes=[
     LoginComponent,
     BookrideComponent,
     MousehoverDirective,
-    RideFilterPipePipe
+    RideFilterPipePipe,
+    RideDetailsComponent,
+    OfferRideComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -29,7 +36,8 @@ const appRoutes:Routes=[
       { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

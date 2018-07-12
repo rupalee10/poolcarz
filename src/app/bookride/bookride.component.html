@@ -1,5 +1,5 @@
 <button type="button" class="btn btn-primary" (click)="showAll(value='all')">Show All Rides</button>
-<button type="button" class="btn btn-primary">Offer A Ride</button>
+<button type="button" class="btn btn-primary" routerLink='/offer-ride'>Offer A Ride</button>
 
 
 <ng-template [ngIf]= "toggleAllRide" >
@@ -25,7 +25,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let ride of rides |rideFilterPipe:value "#boookRide appMousehover>
+            <tr *ngFor="let ride of rides |rideFilterPipe:value  let i = index" #boookRide appMousehover (click)="setClickedRow(ride)">
               <td>{{ride.startPoint}}</td>
               <td>{{ride.EndPoint}}</td>
               <td>{{ride.SeatsAvailable}}</td>
@@ -35,4 +35,4 @@
       </div>
       
 </ng-template>
- 
+<app-ride-details [RideData]='selectedRow' (bookValue)="onridebook($event)"></app-ride-details>

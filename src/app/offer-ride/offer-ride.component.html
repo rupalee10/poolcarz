@@ -1,0 +1,47 @@
+<div class="container">
+  <form [formGroup]="offerRideForm">
+    <div class="form-group">
+      <label class="center-block">Name:
+        <input class="form-control" formControlName="name" required>
+      </label>
+      <div class="alert alert-danger" *ngIf="offerRideForm.controls.name.errors">This field is required</div>
+
+
+    </div>
+    <div class="form-group">
+      <label class="center-block">Location:
+        <input class="form-control" formControlName="location">
+      </label>
+      <div class="alert alert-danger" *ngIf="offerRideForm.controls.location.errors">This field is required</div>
+
+    </div>
+    <div class="form-group">
+      <label class="center-block">Drstination:
+        <input class="form-control" formControlName="dest">
+      </label>
+      <div class="alert alert-danger" *ngIf="offerRideForm.controls.dest.errors">This field is required</div>
+
+
+    </div>
+    <div class="form-group">
+      <label class="center-block">Car:
+        <input class="form-control" formControlName="car">
+      </label>
+      <div class="alert alert-danger" *ngIf="offerRideForm.controls.car.errors">This field is required</div>
+
+    </div>
+    <div class="form-group">
+      <label class="center-block">No of Seats:
+        <input class="form-control" formControlName="seats">
+      </label>
+      <div class="alert alert-danger" *ngIf="offerRideForm.controls.seats.errors">This field is required</div>
+
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    <button class="btn btn-primary">Back</button>
+
+
+
+  </form>
+
+</div>>

@@ -1,0 +1,34 @@
+<div class="container">
+<form #rideForm="ngForm">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Start Point</th>
+        <th>End Point </th>
+        <th>Seats Available</th>
+        <th>Name</th>
+        <th>Car Name</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    <tr  #boookRide>
+        <td #btnId>{{RideData.id}}</td>
+        <td>{{RideData.startPoint}}</td>
+        <td>{{RideData.EndPoint }}</td>
+        <td>{{RideData.SeatsAvailable}}</td>
+        <td>{{RideData.Name}}</td>
+        <td>{{RideData.Car}}</td>
+      </tr>
+   </tbody>
+  </table>
+  <button type="button" class="btn btn-primary"  [ngClass]="{greenclass:enabled,redclass:!enabled}" value="{{RideData}}"  (click)="bookRide(this.RideData);" >{{buttonValue}}</button>
+</form>
+
+<ng-template [ngIf]="bookId">
+  <h1>Your booking id is {{myObjStr}}</h1>-
+
+</ng-template>
+  </div>
+
